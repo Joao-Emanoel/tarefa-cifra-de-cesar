@@ -1,21 +1,89 @@
 programa
 {
 	inclua biblioteca Tipos --> ti
-	inclua biblioteca Texto
- --> t
+	inclua biblioteca Texto --> t
 	
 	const cadeia alfabeto[26] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
-
+	cadeia frase = ""
+	inteiro opcao
 	
+	cadeia a
 	funcao inicio()
 	{
 
-		descriptografar("HX VRUUHLR", 3)
+	inteiro chave
+
+		escreva("o que você deseja fazer? \n \n")
+		escreva("1 - descriptografar uma frase \n")
+		escreva("2 - criptografar uma frase \n")
+		escreva("3 - exibir todas as descriptografias possíveis pra uma frase \n \n")
+		leia(opcao)
+
+		limpa()
+
+		escolha(opcao){
+
+				caso 1:
+
+					escreva("me diga qual frase você quer descriptografar: ")
+					leia(frase)
+					escreva("me diga qual chave eu devo utilizar: ")
+					leia(chave)
+
+					escreva("\n")
+
+					escreva("essa é a sua frase descriptografada: \n \n")
+					
+					descriptografar(frase, chave)
+
+					leia(a)
+	
+				pare
+
+				caso 2:
+
+					escreva("me diga qual frase você quer criptografar: ")
+					leia(frase)
+					escreva("me diga qual chave eu devo utilizar: ")
+					leia(chave)
+
+					escreva("\n")
+
+					escreva("esta é sua frase criptografada: \n \n")
+					
+					criptografar(frase, chave)
+
+					leia(a)
+	
+				pare
+
+				caso 3:
+
+					escreva("me diga qual frase você quer descriptografar: ")
+					leia(frase)
+
+					escreva("\n")
+
+
+					descriptografar_todas(frase)
+
+					leia(a)
+	
+				pare
+				
+			
+		}
+
+
+		limpa()
+	
+		
 	
 	}
 
 	funcao criptografar(cadeia texto, inteiro chave){
 
+		
 		cadeia letra = "Y"
 		caracter letra_caracter = ' '
 		inteiro posicao
@@ -61,6 +129,8 @@ programa
 		}
 		
 	}
+
+	
 	}
 
 
@@ -73,6 +143,9 @@ programa
 
 
 	funcao descriptografar(cadeia texto, inteiro chave){
+
+		
+
 
 		cadeia letra = "Y"
 		caracter letra_caracter = ' '
@@ -121,5 +194,27 @@ programa
 		}
 		
 	}
+
+	
 	}
+
+
+	funcao descriptografar_todas(cadeia frase1){
+
+		escreva("essas são todas as descriptografias possíveis para essa frase: \n \n")
+
+		para(inteiro i=1; i < 26; i++){
+
+			escreva(i, " - ")
+			descriptografar(frase1, i)
+
+		 	escreva("\n")
+
+
+	}
+	
+	}
+	
 }
+
+	
